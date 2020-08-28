@@ -75,7 +75,7 @@
 }
 
 .main {
-  background-image: url("game/assets/background-2.png");
+  background-image: url("http://ec2-13-232-39-98.ap-south-1.compute.amazonaws.com/game/assets/background-2.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
