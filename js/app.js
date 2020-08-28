@@ -1,8 +1,17 @@
+const basket1 = document.getElementById("basket-1");
+const basket2 = document.getElementById("basket-2");
+const basket3 = document.getElementById("basket-3");
+const basket4 = document.getElementById("basket-4");
+
 let data
 document.addEventListener("DOMContentLoaded",async function () {
    data = await fetchAllData("http://ec2-13-232-39-98.ap-south-1.compute.amazonaws.com:3000/users/questions");
   console.log(data);
   setQuestion();
+  basket1.src = "./assets/basket-1.png";
+  basket2.src = "./assets/basket-2.png";
+  basket3.src = "./assets/basket-3.png";
+  basket4.src = "./assets/basket-4.png";
 
 });
 let chance = 5;
@@ -73,10 +82,6 @@ const reset = () => {
 };
 
 const drawBasket = () => {
-  const basket1 = document.getElementById("basket-1");
-  const basket2 = document.getElementById("basket-2");
-  const basket3 = document.getElementById("basket-3");
-  const basket4 = document.getElementById("basket-4");
   const width = canvas.width;
   ctx.drawImage(basket1, 0.1 * width - 200 / 2, 20, 200, 200);
   ctx.drawImage(basket2, 0.35 * width - 200 / 2, 20, 200, 200);
