@@ -75,7 +75,7 @@
 }
 
 .main {
-  background-image: url("/assets/background-2.png");
+  background-image: url("game/assets/background-2.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
