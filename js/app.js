@@ -1,9 +1,9 @@
-let data;
-document.addEventListener("DOMContentLoaded", async function() {
-  data = await fetchAllData(
-    "http://ec2-13-232-39-98.ap-south-1.compute.amazonaws.com:3000/users/questions"
-  );
+let data
+document.addEventListener("DOMContentLoaded",async function () {
+   data = await fetchAllData("http://ec2-13-232-39-98.ap-south-1.compute.amazonaws.com:3000/users/questions");
   console.log(data);
+  setQuestion();
+
 });
 let chance = 5;
 let questionCount = 0;
@@ -21,7 +21,7 @@ ctx.canvas.height = 200;
 
 const msg = document.querySelector(".msg-txt");
 
-const fetchAllData = async url => {
+const fetchAllData = async (url) => {
   try {
     let response = await fetch(url);
     if (response.status !== 200 && response.status !== 201) {
@@ -43,29 +43,30 @@ const sendData = async (url, data, method) => {
       method: method,
       body: JSON.stringify(data),
       headers: {
-        "Content-type": "application/json"
-      }
+        "Content-type": "application/json",
+      },
     });
     console.log(res);
     if (res.status !== 200 && res.status !== 201) {
       throw new Error("Failed");
     }
     res = await res.json();
-    return res;
+    return res.id;
   } catch (err) {
     console.log(err);
   }
 };
+// const res = sendData("http://ec2-13-232-39-98.ap-south-1.compute.amazonaws.com:3000/users/questions", score, "POST");  
 
 
-reset = () => {
+const reset = () => {
   questionCount = 0;
   chance = 0;
   gameOverCard.style.opacity = "0";
   gameOverCard.style.pointerEvents = "none";
   document.querySelector(".overlay").style.display = "none";
   document.querySelector(".middle").style.display = "flex";
-  balls.forEach(ball => {
+  balls.forEach((ball) => {
     ball.style.opacity = 1;
   });
   setQuestion();
@@ -97,13 +98,14 @@ const decrChance = () => {
   }
 };
 
-setQuestion = () => {
+const setQuestion = () => {
+  console.log(data);
+  
   const questionTxt = document.querySelector(".question-txt");
   const optionA = document.querySelector(".option-a");
   const optionB = document.querySelector(".option-b");
   const optionC = document.querySelector(".option-c");
   const optionD = document.querySelector(".option-d");
-  console.log(data);
 
   questionTxt.innerHTML = data[questionCount].question;
   optionA.innerHTML = "A. " + data[questionCount].option1;
@@ -149,8 +151,7 @@ const throwBall = () => {
   checkAns();
 };
 
-setQuestion();
-window.addEventListener("click", () => {
+document.addEventListener("click", () => {
   pointer.classList.add("paused");
   var st = window.getComputedStyle(pointer, null);
   var tr = st.getPropertyValue("transform");
@@ -165,9 +166,3 @@ window.addEventListener("click", () => {
   console.log(angle);
   throwBall();
 });
-
-
-
-
-
-const res = sendData("http://ec2-13-232-39-98.ap-south-1.compute.amazonaws.com:3000/users/questions", 55, "POST");
