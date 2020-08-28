@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="./styles/admin_panel.css">
+</head>
+<body>
+  <header class="main-header">
+    <div class="left"><a href="" class="left-link">Admin Panel</a></div>
+    <ul class="nav-items">
+      <li class="nav-item"><a href="#" class="nav-link">Logout</a></li>
+    </ul>
+  </header>
+  <section class="main">
+    <div class="sidebar">
+      <ul class="sidebar-items">
+        <li class="sidebar-item"><a href="" class="sidebar-item__link">Add questions</a></li>
+        <li class="sidebar-item"><a href="" class="sidebar-item__link">View questions</a></li>
+      </ul>
+    </div>
+    <div class="container">
+      <div class="edit">
+        <form action="" class="questions-form">
+          <textarea name="question" id="question" cols="30" rows="5" placeholder="write your question here..."></textarea>
+          <input type="text" name="option-a" id="option-a" placeholder="Option A">
+          <input type="text" name="option-a" id="option-b" placeholder="Option B">
+          <input type="text" name="option-a" id="option-c" placeholder="Option C">
+          <input type="text" name="option-a" id="option-d" placeholder="Option D">
+          <input type="text" name="correct-ans" id="correct-ans" placeholder="Correct Answer">
+        </form>
+        <button class="btn">Save</button>
+      </div>
+      <div class="view">
+        <div class="move-btns">
+          <button class="back-btn"><img src="./assets/back.svg" alt="back-btn"></button>
+          <button class="forward-btn"><img src="./assets/forward.svg" alt="forward-btn"></button>
+        </div>
+        <h4 class="question-title editData">Question title</h4>
+        <div class="display-option">
+          <div class="option option-1">
+            <p class="editData">publishing software</p>
+          </div>
+          <div class="option option-1">
+            <p class="editData">Lorem Ipsum</p>
+          </div>
+          <div class="option option-1">
+            <p class="editData">type and scrambled</p>
+          </div>
+          <div class="option option-1">
+            <p class="editData">survived not only</p>
+          </div>
+        </div>
+        <h4 class="display-answer editData" target="form">Answer</h4>
+        <div class="btns">
+          <button class="edit-btn" data-id="0">Edit</button>
+          <button class="delete-btn">Delete</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

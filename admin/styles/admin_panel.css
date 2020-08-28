@@ -1,0 +1,300 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.main-header {
+  background: #2d2d2d;
+  grid-area: header;
+  height: 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 2rem;
+  position: fixed;
+  width: 100%;
+}
+
+.main-header .nav-items {
+  list-style: none;
+}
+
+.main-header .nav-link,
+.main-header .left-link {
+  text-decoration: none;
+  color: #D5CFB5;
+}
+
+.main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  height: 100vh;
+}
+
+.main .sidebar {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin: 5rem 2rem;
+  background-color: #2d2d2d;
+  padding: 1rem 2rem;
+  height: 50%;
+  border-radius: 1.5rem;
+}
+
+.main .sidebar .sidebar-items {
+  list-style: none;
+}
+
+.main .sidebar .sidebar-items .sidebar-item {
+  margin-bottom: 0.5rem;
+}
+
+.main .sidebar .sidebar-items .sidebar-item .sidebar-item__link {
+  color: #D5CFB5;
+  text-decoration: none;
+}
+
+.main .sidebar .sidebar-items .sidebar-item .sidebar-item__link:hover {
+  text-decoration: underline;
+}
+
+.main .container {
+  -webkit-box-flex: 10;
+      -ms-flex: 10;
+          flex: 10;
+}
+
+.main .container .edit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 5rem;
+  display: none;
+}
+
+.main .container .edit .questions-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  padding: 1rem;
+  width: 70%;
+}
+
+.main .container .edit .questions-form #question, .main .container .edit .questions-form #option-a, .main .container .edit .questions-form #option-b,
+.main .container .edit .questions-form #option-c, .main .container .edit .questions-form #option-d, .main .container .edit .questions-form #correct-ans {
+  border: none;
+  background: none;
+  border-bottom: 2px solid #2c2c2c;
+  padding: 0.5rem;
+  width: 100%;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.main .container .edit .questions-form #option-a, .main .container .edit .questions-form #option-b,
+.main .container .edit .questions-form #option-c, .main .container .edit .questions-form #option-d, .main .container .edit .questions-form #correct-ans {
+  margin-top: 1rem;
+  width: 80%;
+}
+
+.main .container .edit .questions-form #question:focus, .main .container .edit .questions-form #option-a:focus, .main .container .edit .questions-form #option-b:focus,
+.main .container .edit .questions-form #option-c:focus, .main .container .edit .questions-form #option-d:focus, .main .container .edit .questions-form #correct-ans:focus {
+  border: none;
+  background: none;
+  outline: none;
+  border-bottom: 2px solid #8e42e6;
+}
+
+.main .container .edit .btn {
+  background: none;
+  border: none;
+  border: 2px solid #8e42e6;
+  border-radius: 1rem;
+  margin: 1rem;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  font-size: 1.2rem;
+  padding: 0.7rem;
+  cursor: pointer;
+}
+
+.main .container .edit .btn:focus,
+.main .container .edit .btn:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  background-color: #8e42e6;
+  outline: none;
+  color: #e4e3e3;
+}
+
+.main .container .view {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 60%;
+  margin-top: 5rem;
+  display: -ms-grid;
+  display: grid;
+  grid-auto-columns: 1fr 1fr;
+  grid-row-gap: 0.5rem;
+      grid-template-areas: "moveBtns moveBtns" "question question" "options options" "answer answer" "btns btns";
+  border: 1px solid #2d2d2d;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.main .container .view .move-btns {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: moveBtns;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .container .view .move-btns .back-btn,
+.main .container .view .move-btns .forward-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.main .container .view .move-btns .back-btn img,
+.main .container .view .move-btns .forward-btn img {
+  width: 1.5rem;
+}
+
+.main .container .view .question-title {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: question;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.main .container .view .display-option {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: options;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  grid-gap: 0.5rem;
+}
+
+.main .container .view .display-option .option {
+  text-align: center;
+}
+
+.main .container .view .display-answer {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: answer;
+  text-align: center;
+}
+
+.main .container .view .btns {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: btns;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .container .view .btns .edit-btn,
+.main .container .view .btns .delete-btn {
+  background: none;
+  border: none;
+  border: 2px solid #8e42e6;
+  border-radius: 1rem;
+  margin: 1rem;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  font-size: 1.2rem;
+  padding: 0.7rem;
+  cursor: pointer;
+}
+
+.main .container .view .btns .delete-btn {
+  border: 2px solid red;
+}
+
+.main .container .view .btns .edit-btn:focus,
+.main .container .view .btns .edit-btn:hover,
+.main .container .view .btns .delete-btn:focus,
+.main .container .view .btns .delete-btn:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  background-color: #8e42e6;
+  outline: none;
+  color: #e4e3e3;
+}
+
+.main .container .view .btns .delete-btn:focus,
+.main .container .view .btns .delete-btn:hover {
+  background-color: red;
+}
+/*# sourceMappingURL=admin_panel.css.map */

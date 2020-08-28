@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game</title>
+  <link rel="stylesheet" href="./styles/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="overlay"></div>
+  <div class="game-over">
+    <p>Game Over</p>
+    <a href="#" class="retry-button" onclick="reset()">Retry</a>
+  </div>
+  <section class="main">
+    <div class="msg"><p class="msg-txt">Wrong Answer</p></div>
+    <canvas id="canvas"></canvas>
+    <img src="./assets/basket-1.png" alt="" class="basket-1" id="basket-1" onload="drawBasket()">
+    <img src="./assets/basket-2.png" alt="" class="basket-2" id="basket-2" onload="drawBasket()">
+    <img src="./assets/basket-3.png" alt="" class="basket-3" id="basket-3" onload="drawBasket()">
+    <img src="./assets/basket-4.png" alt="" class="basket-4" id="basket-4" onload="drawBasket()">
+    <div class="bottom">
+      <div class="score-chances">
+        <div class="score-board">
+          <div class="score-txt">Score</div>
+          <div class="score">0</div>
+        </div>
+        <div class="chance-board">
+          <img src="./assets/ball.png" alt="" class="ball">
+          <img src="./assets/ball.png" alt="" class="ball">
+          <img src="./assets/ball.png" alt="" class="ball">
+          <img src="./assets/ball.png" alt="" class="ball">
+          <img src="./assets/ball.png" alt="" class="ball">
+        </div>
+      </div>
+
+      <div class="middle">
+        <div class="pointer"><img src="./assets/arrow.png" alt="pointer" class="pointer__img"></div>
+        <div class="ready-ball"><img src="./assets/ball.png" alt="" class="ready-ball__img"></div>
+      </div>
+
+      <div class="question-board">
+        <div class="question-txt"></div>
+        <div class="options">
+          <p class="option-a"></p>
+          <p class="option-b"></p>
+          <p class="option-c"></p>
+          <p class="option-d"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="./js/app.js"></script>
+</body>
+</html> 
